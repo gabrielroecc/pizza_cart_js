@@ -1,0 +1,530 @@
+@import url("https://fonts.cdnfonts.com/css/montserrat");
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	list-style: none;
+	font-family: "Montserrat";
+}
+.container {
+	width: 100%;
+	max-width: 1280px;
+	margin: 0 auto;
+	padding: 0 2%;
+}
+/* MODEL / / MODEL / / MODEL / / MODEL / / MODEL / / MODEL / / MODEL / / MODEL / / MODEL / / MODEL */
+.models {
+	padding: 200px 0;
+	display: none;
+}
+.pizza_card {
+	padding: 25px 62px;
+	border-radius: 22px;
+	width: fit-content;
+	background: #fff;
+	box-shadow: 0px 0px 22px 0px rgba(0, 0, 0, 0.25);
+
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	height: 432px;
+	max-width: 352px;
+
+	margin-bottom: 82px;
+
+	cursor: pointer;
+	transition: 0.4s;
+	position: relative;
+}
+.pizza_card img.pizza_img {
+	width: 100%;
+	max-width: 300px;
+	position: relative;
+	top: -83px;
+}
+.info_pizza_wrapper {
+	position: relative;
+	top: calc(-95px + 30px);
+
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+.pizza_name {
+	color: #1d1d1d;
+	text-align: center;
+	font-family: Montserrat;
+	font-size: 20px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+}
+.pizza_price {
+	color: #1d1d1d;
+	text-align: center;
+	font-family: Montserrat;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+}
+.pizza_description {
+	margin: 0 auto;
+	color: #1d1d1d;
+	text-align: center;
+	font-family: Montserrat;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+}
+img.add_pizza_btn {
+	width: 100%;
+	max-width: 58px;
+	position: absolute;
+	bottom: -18px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+/* MODEL / / MODEL / / MODEL / / MODEL / / MODEL / / MODEL / / MODEL / / MODEL / / MODEL / / MODEL */
+header {
+	padding: 27px 0;
+	background-color: #fff;
+	box-shadow: 0px 0px 22px 2px rgba(0, 0, 0, 0.1);
+}
+header > .container {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.menu_btn {
+	border-radius: 4px;
+	background-color: #c8102e;
+	padding: 7px;
+	position: relative;
+}
+.menu_btn > img {
+	width: 20px;
+	position: relative;
+	top: 4px;
+	z-index: 5;
+}
+.pizza_cart_qtd {
+	position: absolute;
+	top: 7px;
+	right: 3px;
+	border-radius: 29px;
+	border: 1px solid #c8102e;
+	background-color: #fff;
+	text-align: center;
+	font-size: 8px;
+	font-weight: 400;
+	width: 12px;
+	height: 12px;
+	z-index: 10;
+}
+.section_1 {
+	padding: 82px;
+	background-image: url("../img/bg1.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	text-align: center;
+}
+.title_sec_1 {
+	color: #fff;
+	text-align: center;
+	font-size: 36px;
+	font-weight: 700;
+}
+.p_sec_1 {
+	color: #fff;
+	text-align: center;
+	font-size: 16px;
+	font-weight: 400;
+	width: 100%;
+	max-width: 356px;
+	margin: 22px auto 0;
+}
+.btn_do_order {
+	border-radius: 1000px;
+	background-color: #c8102e;
+	padding: 15px 43px;
+	color: #fff;
+	text-align: center;
+	font-size: 16px;
+	font-weight: 700;
+	width: fit-content;
+	margin: 97px auto 0;
+}
+.arrow_sec_1 {
+	margin-top: 100px;
+}
+.pizza_area {
+	padding: 82px 0;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 112px;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	max-width: 1280px;
+	margin: 0 auto;
+	text-align: center;
+}
+.title_sec_2 {
+	color: #1d1d1d;
+	text-align: center;
+	font-family: Montserrat;
+	font-size: 36px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+}
+.background {
+	z-index: 15;
+	position: absolute;
+	background-color: rgba(0, 0, 0, 0.7);
+	inset: 0;
+	opacity: 0;
+	pointer-events: none;
+	position: fixed;
+	transition: 0.4s;
+}
+.modal_pizza {
+	padding: 37px 60px;
+	width: fit-content;
+	background-color: #fff;
+	position: absolute;
+	top: 0;
+	z-index: 20;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	position: fixed;
+
+	opacity: 0;
+	pointer-events: none;
+	transition: 0.4s;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 82px;
+
+	border-radius: 22px;
+	background: #fff;
+	box-shadow: 0px 0px 22px 8px rgba(0, 0, 0, 0.25);
+}
+.modalTitle {
+	color: #1d1d1d;
+	font-family: Montserrat;
+	font-size: 36px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+	margin-bottom: 10px;
+}
+.modalDescription {
+	color: #1d1d1d;
+	font-family: Montserrat;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+	margin-bottom: 32px;
+	max-width: 394px;
+}
+.sizeText {
+	color: #adadad;
+	font-family: Montserrat;
+	font-size: 24px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+	margin-bottom: 10px;
+}
+.sizes {
+	display: flex;
+	align-items: center;
+	gap: 22px;
+}
+.pizzaInfo_size {
+	color: #1d1d1d;
+	font-family: Montserrat;
+	font-size: 24px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+	pointer-events: all;
+	cursor: pointer !important;
+}
+.pizzaInfo_size span {
+	font-size: 12px;
+	font-weight: 400;
+}
+.pizzaInfo_size.selected {
+	padding: 8px 10px;
+	background-color: #c8102e;
+	color: #fff;
+	border-radius: 4px;
+	pointer-events: none;
+}
+.modalPrice {
+	margin: 32px 0;
+}
+.priceText {
+	color: #adadad;
+	font-family: Montserrat;
+	font-size: 24px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+	margin-bottom: 10px;
+}
+.pizzaPrice {
+	display: flex;
+	align-items: center;
+	gap: 32px;
+}
+.pizzaPriceActual {
+	color: #1d1d1d;
+	font-family: Montserrat;
+	font-size: 24px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+}
+.modalPrice_qtd {
+	display: flex;
+	align-items: center;
+	gap: 17px;
+	padding: 5px 16px;
+	border-radius: 4px;
+	background-color: #c8102e;
+}
+.modalPrice_qtd button {
+	border: 0;
+	outline: 0;
+	background-color: transparent;
+	cursor: pointer;
+
+	color: #fff;
+	text-align: center;
+	font-family: Montserrat;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+}
+.qtd_actual {
+	color: #fff;
+	text-align: center;
+	font-family: Montserrat;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+}
+.modalBtns {
+	display: flex;
+	align-items: center;
+	gap: 32px;
+}
+.buy {
+	border-radius: 1000px;
+	background: #77c810;
+
+	color: #fff;
+	text-align: center;
+	font-family: Montserrat;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+
+	padding: 15px 59px;
+
+	cursor: pointer;
+}
+.cancel {
+	color: #1d1d1d;
+	text-align: center;
+	font-family: Montserrat;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+
+	cursor: pointer;
+}
+.background_cart {
+	z-index: 15;
+	position: absolute;
+	background-color: rgba(0, 0, 0, 0.7);
+	inset: 0;
+	opacity: 0;
+	pointer-events: none;
+	position: fixed;
+	transition: 0.4s;
+}
+.cart {
+	padding: 83px 220px 83px 59px;
+	background-color: #fff;
+	width: fit-content;
+	position: absolute;
+	right: -200%;
+	top: 0;
+	height: 100vh;
+	position: fixed;
+	z-index: 20;
+	transition: 0.4s;
+}
+.cart.active {
+	padding: 83px 220px 83px 59px;
+	background-color: #fff;
+	width: fit-content;
+	position: fixed;
+	right: 0;
+	height: 1024px;
+	overflow: scroll;
+	transition: 0.4s;
+	z-index: 20;
+}
+.cart_title {
+	color: #1d1d1d;
+	font-family: Montserrat;
+	font-size: 36px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+	margin-bottom: 73px;
+}
+.pizza_item_wrapper {
+	padding-bottom: 32px;
+}
+.pizza_item_cart {
+	display: flex;
+	align-items: center;
+	justify-content: start;
+	gap: 32px;
+}
+.pizza_name_cart {
+	color: #1d1d1d;
+	font-family: Montserrat;
+	font-size: 36px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+	position: relative;
+	display: flex;
+	top: -14px;
+}
+.pizza_qtd_cart {
+	padding: 5px;
+	border-radius: 1000px;
+	background: #c8102e;
+	width: 30px;
+	height: 30px;
+
+	color: #fff;
+	text-align: center;
+	font-family: Montserrat;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+}
+
+.pizza_item_cart img {
+	width: 118px;
+}
+.subtotal_wrapper {
+	margin-top: calc(82px - 32px);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.desc_wrapper,
+.total_wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-top: 82px;
+}
+.subtotal,
+.desc {
+	color: #dadada;
+	font-family: Montserrat;
+	font-size: 36px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+}
+.subtotal_value,
+.desc_value {
+	color: #1d1d1d;
+	font-family: Montserrat;
+	font-size: 36px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+}
+.total,
+.total_value {
+	color: #1d1d1d;
+	font-family: Montserrat;
+	font-size: 36px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+}
+.buy_btn_cart > div {
+	width: 100%;
+	margin-top: 153px;
+
+	color: #fff;
+	text-align: center;
+	font-family: Montserrat;
+	font-size: 36px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+}
+.pizzaSizeSelectec {
+	font-size: 20px;
+	font-weight: 400;
+}
+.removePizza {
+	cursor: pointer;
+	font-size: 12px;
+	font-weight: 400;
+	color: red;
+}
+.pizza_name_cart > .pizza_name_size_wrapper {
+	display: flex;
+	align-items: start;
+	justify-content: start;
+	flex-direction: column;
+}
+.pizzaNameSelected {
+	color: #1d1d1d;
+	font-family: Montserrat;
+	font-size: 36px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+}
+.pizzaSizzeSelected {
+	font-weight: 400;
+	font-size: 16px;
+}
+.pizza_qtd_cart {
+	position: relative;
+	top: 10px;
+	left: 32px;
+}
+.removePizza {
+	position: absolute;
+	bottom: -20px;
+}
