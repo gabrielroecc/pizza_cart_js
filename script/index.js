@@ -162,7 +162,7 @@ pizzaJson.map((item) => {
       pizzaCartItem.classList.add("pizza_item_wrapper");
       pizzaCartItem.innerHTML = `
 				<div class="pizza_item_cart">
-				<img src=${selectedPizzaImg}/>
+				<img src=${selectedPizzaImg}>
 					<div class="pizza_name_cart">
 						<div class="pizza_name_size_wrapper"> 
 							<div class="pizzaNameSelected">${selectedPizzaName}</div>
